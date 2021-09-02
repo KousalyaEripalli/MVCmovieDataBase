@@ -90,6 +90,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="A15-Tm-Gij"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" id="b0M-bx-S0e">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.61475926759999999" green="0.41947683699999999" blue="0.37077754689999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                             <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iPq-NX-8xX">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -116,6 +121,7 @@
                     <navigationItem key="navigationItem" id="iHS-ML-MGy"/>
                     <connections>
                         <outlet property="SearchBar" destination="iPq-NX-8xX" id="j5S-S0-vcs"/>
+                        <outlet property="activityIndicator" destination="b0M-bx-S0e" id="ca0-WR-CcM"/>
                         <outlet property="tableView" destination="Ne5-wN-ofg" id="crF-ld-MbY"/>
                     </connections>
                 </viewController>

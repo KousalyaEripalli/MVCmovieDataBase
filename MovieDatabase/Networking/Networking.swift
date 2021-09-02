@@ -6,12 +6,6 @@
 //
 
 import UIKit
-
-//class Networking: NSObject {
-//
-//}
-
-import Foundation
 import Foundation
 
 // Networking functionaliy for grapping the Model subject to Codable Protocool /

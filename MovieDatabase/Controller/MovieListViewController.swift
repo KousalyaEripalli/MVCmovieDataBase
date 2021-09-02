@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class MovieListViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var objMovieModel:modelMovieData?
     var originalMovieData: [Results]?
     
@@ -20,22 +22,28 @@ class MovieListViewController: UIViewController {
  override func viewDidLoad() {
         super.viewDidLoad()
         
+    
+        //NVActivityIndicatorView()
        // SearchData = modelMovieData()
         objMovieModel = modelMovieData()
         //calling api
+    activityIndicator.startAnimating()
         let objNetworking = Networking()
+    
         objNetworking.response(url: Constant.baseURL.rawValue + Constant.api_key.rawValue) { modelData in
             print(modelData)
             self.objMovieModel = modelData
             self.originalMovieData = modelData.results
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
          
         }
      
     }
-    
+   
+   
 }
 extension MovieListViewController:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,7 +104,7 @@ extension MovieListViewController:UISearchBarDelegate{
     func searchData(){
 
         var movieIndex = 0
-        var irrirations = 0
+        var iterations = 0
         if searchBarText != "" {
 
             //Operation search and delete
@@ -123,7 +131,7 @@ extension MovieListViewController:UISearchBarDelegate{
                     }
 
                     //Dont Increment if index is larger than count
-                    if letterIndex < searchBarText.count ?? 0 {
+                    if letterIndex < searchBarText.count{
 
                         letterIndex += 1
 
@@ -149,8 +157,8 @@ extension MovieListViewController:UISearchBarDelegate{
 
                     }
                 }
-                irrirations += 1
-                print("Irriration: \(irrirations)")
+                iterations += 1
+                print("Iteraion: \(iterations)")
             }
 
         }
