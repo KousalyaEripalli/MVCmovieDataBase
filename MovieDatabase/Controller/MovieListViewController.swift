@@ -21,7 +21,7 @@ class MovieListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
  override func viewDidLoad() {
         super.viewDidLoad()
-        
+       //Adding new feature
     
         //NVActivityIndicatorView()
        // SearchData = modelMovieData()
